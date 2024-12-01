@@ -30,6 +30,9 @@
     --background-color: rgba(12, 35, 64, 0.9); /* Semi-transparent Primary Color */
     --text-color: #edf2f9; /* Very Light Blue for Text */
     --highlight-color: #ae9142; /* Secondary Color for Highlights */
+    
+    /* Focus Outline Color */
+    --focus-outline-color: #d39f10; /* Mustard Gold for focus outlines */
   }
   
   /* Body Styling */
@@ -97,7 +100,7 @@
   
   section h2 {
     margin-bottom: 15px;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Updated as per user change */
     font-size: 2em;
   }
   
@@ -166,9 +169,11 @@
     transition: background-color 0.3s, transform 0.3s;
   }
   
-  #rsvp-form button:hover {
+  #rsvp-form button:hover,
+  #rsvp-form button:focus {
     background-color: var(--tertiary-color-4);
     transform: scale(1.05);
+    outline: none;
   }
   
   /* Countdown Timer Styling */
@@ -176,7 +181,7 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    font-size: 1.5em;
+    font-size: 1.2em; /* Reduced font size from 1.5em to 1.2em */
   }
   
   #timer span {
@@ -192,17 +197,7 @@
     color: var(--tertiary-color-5);
   }
   
-  .social a {
-    color: var(--highlight-color);
-    margin: 0 10px;
-    font-size: 1.5em;
-    transition: color 0.3s, transform 0.3s;
-  }
-  
-  .social a:hover {
-    color: var(--tertiary-color-2);
-    transform: scale(1.2);
-  }
+  /* Removed .social styles as social links are being removed */
   
   /* Responsive Design */
   
@@ -219,6 +214,12 @@
   
     #about-dogs .dogs img {
       width: 80%;
+    }
+  
+    /* Increase focus outline for better visibility */
+    a:focus, button:focus, input:focus {
+      outline: 2px dashed var(--focus-outline-color);
+      outline-offset: 2px;
     }
   }
   

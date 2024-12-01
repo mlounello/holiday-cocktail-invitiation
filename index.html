@@ -4,82 +4,82 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Holiday Cocktail Party Invitation</title>
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <title>Holiday Cocktail Party Invitation | Celebrate with Us!</title>
+  
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Join us for a festive Holiday Cocktail Party! Enjoy delightful cocktails, great company, and holiday cheer at our celebration. RSVP now!">
+  
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- Animate.css for Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <!-- Snowfall Canvas -->
-  <canvas id="snowfall-canvas"></canvas>
   
-  <div class="container">
+  <!-- Snowfall Canvas -->
+  <canvas id="snowfall-canvas" aria-hidden="true"></canvas>
+  
+  <!-- Main Content -->
+  <main class="container" id="main-content">
+    
+    <!-- Header Section -->
     <header class="animate__animated animate__fadeInDown">
-      <h1>You're Invited!</h1>
-      <p>Join us for a Festive Holiday Cocktail Party</p>
+      <h1>Holiday Cocktail Party</h1>
+      <p>Join us for an evening of festive cheer!</p>
     </header>
     
-    <section id="details" class="animate__animated animate__fadeInUp">
-      <h2>Event Details</h2>
-      <p><strong>Date:</strong> Saturday, December 21, 2024</p>
-      <p><strong>Time:</strong> 6:00 PM</p>
-      <p><strong>Location:</strong> 15 Breeman Street, Colonie, NY 12205</p>
+    <!-- Event Details Section -->
+    <section id="details" class="animate__animated animate__fadeInUp" aria-labelledby="details-heading">
+      <h2 id="details-heading">Event Details</h2>
+      <p>Date: December 21, 2024</p>
+      <p>Time: 6:00 PM - 11:00 PM</p>
+      <p>Location: 15 Breeman Street, Colonie, NY 12205</p>
     </section>
     
-    <!-- Single Dog Image Section -->
-    <section id="about-dogs" class="animate__animated animate__fadeInUp">
-      <h2>Meet Phinnaeus and Louis</h2>
+    <!-- About the Hosts and Dogs Section -->
+    <section id="about-dogs" class="animate__animated animate__fadeInUp" aria-labelledby="about-dogs-heading">
+      <h2 id="about-dogs-heading">About Us and Our Furry Friends</h2>
       <div class="dogs">
-        <img src="assets/images/dogs-together.jpg" alt="Phinnaeus the Golden Retriever and Louis the Cardigan Corgi">
-        <p>Phinnaeus Underfoot 🐾 & Louis Longfellow 🐾</p>
+        <img src="assets/images/dogs-together.jpg" alt="Phinnaeus the Golden Retriever and Louis the Cardigan Corgi enjoying the holiday season together">
+        <p>Meet Phinnaeus and Louis, our beloved companions who love spreading holiday joy!</p>
       </div>
     </section>
     
-    <section id="rsvp" class="animate__animated animate__fadeInUp">
-        <h2>RSVP</h2>
-        <form id="rsvp-form" action="https://formspree.io/f/myzybagr" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-          
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
-          
-          <input type="hidden" name="_next" value="https://mlounello.github.io/holiday-cocktail-invitation/thankyou.html">
-          
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+    <!-- RSVP Section -->
+    <section id="rsvp" class="animate__animated animate__fadeInUp" aria-labelledby="rsvp-heading">
+      <h2 id="rsvp-heading">RSVP</h2>
+      <form id="rsvp-form" action="https://formspree.io/f/mayvkwpz" method="POST" aria-label="RSVP Form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required aria-required="true">
+        
+        <button type="submit">Submit</button>
+      </form>
     </section>
     
-    <section id="countdown" class="animate__animated animate__fadeInUp">
-      <h2>Countdown to the Party!</h2>
-      <div id="timer">
-        <span id="days">0</span> Days 
-        <span id="hours">0</span> Hours 
-        <span id="minutes">0</span> Minutes 
-        <span id="seconds">0</span> Seconds
+    <!-- Countdown Timer Section -->
+    <section id="timer" class="animate__animated animate__fadeInUp" aria-labelledby="timer-heading">
+      <h2 id="timer-heading">Time Until the Party</h2>
+      <div class="countdown">
+        <span id="days">00</span> Days
+        <span id="hours">00</span> Hours
+        <span id="minutes">00</span> Minutes
+        <span id="seconds">00</span> Seconds
       </div>
     </section>
     
-    <footer class="animate__animated animate__fadeInUp">
-      <p>We look forward to celebrating with you!</p>
-      <div class="social">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      </div>
-    </footer>
-  </div>
+    <!-- Removed Footer Section -->
+    
+  </main>
   
-  <!-- Custom JavaScript -->
+  <!-- Countdown Timer Script -->
   <script src="script.js"></script>
 </body>
 </html>
