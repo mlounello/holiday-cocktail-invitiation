@@ -39,21 +39,24 @@
       <h2>Meet Phinnaeus and Louis</h2>
       <div class="dogs">
         <img src="assets/images/dogs-together.jpg" alt="Phinnaeus the Golden Retriever and Louis the Cardigan Corgi">
-        <p>Phinnaeus 🐾 & Louis 🐾</p>
+        <p>Phinnaeus Underfoot 🐾 & Louis Longfellow 🐾</p>
       </div>
     </section>
     
     <section id="rsvp" class="animate__animated animate__fadeInUp">
-      <h2>RSVP</h2>
-      <form id="rsvp-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-        
-        <button type="submit">Submit</button>
-      </form>
+        <h2>RSVP</h2>
+        <form id="rsvp-form" action="https://formspree.io/f/myzybagr" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
+          
+          <input type="hidden" name="_next" value="thankyou.html">
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </section>
     
     <section id="countdown" class="animate__animated animate__fadeInUp">

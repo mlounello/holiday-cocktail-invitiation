@@ -1,5 +1,6 @@
 // RSVP Form Handling
-document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+// Remove or comment out the RSVP form alert
+/*document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const name = document.getElementById('name').value.trim();
@@ -16,6 +17,7 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
       alert('Please fill in all fields.');
     }
   });
+  */
   
   // Countdown Timer
   const eventDate = new Date('2024-12-21T18:00:00').getTime();
