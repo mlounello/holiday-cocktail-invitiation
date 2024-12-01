@@ -342,6 +342,7 @@
     #about-dogs .dogs {
       flex-direction: row;
       justify-content: center;
+      align-items: flex-start; /* Align items at the top */
     }
   
     .dog-host {
@@ -397,6 +398,7 @@
     #about-dogs .dogs {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start; /* Align items at the top */
     }
   
     .dog-host {
