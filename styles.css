@@ -7,7 +7,10 @@
   
   body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1a1a2e; /* Fallback color */
+    background-image: url('assets/images/background.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #e0e0e0;
     overflow-x: hidden;
     position: relative;
@@ -157,8 +160,6 @@
   .social a:hover {
     color: #00e5ff;
   }
-  
-  /* Animations (handled via Animate.css classes in HTML) */
   
   /* Responsive Design */
   @media (max-width: 600px) {
