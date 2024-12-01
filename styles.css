@@ -145,7 +145,7 @@
     color: var(--tertiary-color-5);
   }
   
-  #rsvp-form input {
+  #rsvp-form input, #rsvp-form select {
     padding: 10px;
     border: 2px solid var(--tertiary-color-2);
     border-radius: 5px;
@@ -154,7 +154,26 @@
     color: var(--primary-color);
   }
   
-  #rsvp-form input::placeholder {
+  #rsvp-form input::placeholder, #rsvp-form select::placeholder {
+    color: var(--tertiary-color-6);
+  }
+  
+  #guest-names label {
+    font-size: 1em;
+    color: var(--tertiary-color-5);
+  }
+  
+  #guest-names input {
+    padding: 10px;
+    border: 2px solid var(--tertiary-color-2);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--tertiary-color-7);
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  #guest-names input::placeholder {
     color: var(--tertiary-color-6);
   }
   
@@ -176,12 +195,12 @@
     outline: none;
   }
   
-   /* Countdown Timer Styling */
-   #timer {
+  /* Countdown Timer Styling */
+  #timer {
     display: flex;
     justify-content: center;
     gap: 15px;
-    font-size: 1.5em;
+    font-size: 1.2em; /* Reduced font size from 1.5em to 1.2em */
   }
   
   #timer span {
@@ -191,13 +210,44 @@
     color: var(--tertiary-color-5);
   }
   
-  /* Footer Styling */
-  footer {
-    text-align: center;
-    color: var(--tertiary-color-5);
+  /* Modal Styling */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
   }
   
-  /* Removed .social styles as social links are being removed */
+  .modal-content {
+    background-color: var(--background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--highlight-color);
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .close-button {
+    color: var(--tertiary-color-5);
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: var(--tertiary-color-2);
+    text-decoration: none;
+    cursor: pointer;
+  }
   
   /* Responsive Design */
   
@@ -207,7 +257,7 @@
       font-size: 2em;
     }
   
-    #rsvp-form input, #rsvp-form button {
+    #rsvp-form input, #rsvp-form select, #rsvp-form button {
       font-size: 1em;
       padding: 10px;
     }
@@ -217,7 +267,7 @@
     }
   
     /* Increase focus outline for better visibility */
-    a:focus, button:focus, input:focus {
+    a:focus, button:focus, input:focus, select:focus {
       outline: 2px dashed var(--focus-outline-color);
       outline-offset: 2px;
     }

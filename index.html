@@ -10,7 +10,7 @@
   <!-- Meta Description for SEO -->
   <meta name="description" content="Join us for a festive Holiday Cocktail Party! Enjoy delightful cocktails, great company, and holiday cheer at our celebration. RSVP now!">
   
-  <!-- Font Awesome for Social Icons -->
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- Animate.css for Animations -->
@@ -23,6 +23,8 @@
   
   <!-- Snowfall Canvas -->
   <canvas id="snowfall-canvas" aria-hidden="true"></canvas>
+  
+  <!-- Background Music Removed -->
   
   <!-- Main Content -->
   <main class="container" id="main-content">
@@ -54,11 +56,29 @@
     <section id="rsvp" class="animate__animated animate__fadeInUp" aria-labelledby="rsvp-heading">
       <h2 id="rsvp-heading">RSVP</h2>
       <form id="rsvp-form" action="https://formspree.io/f/mayvkwpz" method="POST" aria-label="RSVP Form">
-        <label for="name">Name:</label>
+        <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
         
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required aria-required="true">
+        <label for="guests">Number of Attendees:</label>
+        <select id="guests" name="guests" required aria-required="true">
+          <option value="">Select</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        
+        <!-- Guest Names (Initially Hidden) -->
+        <div id="guest-names" style="display: none;">
+          <label for="guest1">Guest 1 Name:</label>
+          <input type="text" id="guest1" name="guest1" placeholder="Guest 1 Name">
+          
+          <label for="guest2">Guest 2 Name:</label>
+          <input type="text" id="guest2" name="guest2" placeholder="Guest 2 Name">
+          
+          <label for="guest3">Guest 3 Name:</label>
+          <input type="text" id="guest3" name="guest3" placeholder="Guest 3 Name">
+        </div>
         
         <button type="submit">Submit</button>
       </form>
@@ -76,6 +96,15 @@
     </section>
     
     <!-- Removed Footer Section -->
+    
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close-button" role="button" tabindex="0">&times;</span>
+        <h2>Thank You!</h2>
+        <p>Your RSVP has been received. We look forward to celebrating with you!</p>
+      </div>
+    </div>
     
   </main>
   
