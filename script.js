@@ -17,7 +17,7 @@
       initializeSnowflakes(); // Reinitialize snowflakes on resize
     });
   
-    // Mouse Position Tracking for Interactivity
+    // Optional: Mouse Position Tracking for Interactive Snowflakes
     let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
   
     window.addEventListener('mousemove', function(e) {
@@ -131,12 +131,36 @@
       document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
       document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
   
+      // Update progress circles
+      updateProgressCircles(days, hours, minutes, seconds);
+  
       // If the countdown is finished, display some text
       if (distance < 0) {
         clearInterval(countdownInterval);
-        document.querySelector('#timer h2').innerText = "The Party Has Started!";
+        document.querySelector('#timer-heading').innerText = "The Party Has Started!";
         document.querySelector('.countdown').style.display = 'none';
       }
+    }
+  
+    // Function to update progress circles
+    function updateProgressCircles(days, hours, minutes, seconds) {
+      // Define total values for percentage calculations
+      const daysTotal = 365; // Total days in a year (adjust as needed)
+      const hoursTotal = 24;
+      const minutesTotal = 60;
+      const secondsTotal = 60;
+  
+      // Calculate percentage remaining for each unit
+      const daysProgress = Math.min((days / daysTotal) * 283, 283);
+      const hoursProgress = Math.min((hours / hoursTotal) * 283, 283);
+      const minutesProgress = Math.min((minutes / minutesTotal) * 283, 283);
+      const secondsProgress = Math.min((seconds / secondsTotal) * 283, 283);
+  
+      // Update stroke-dashoffset
+      document.querySelector('#days').parentElement.querySelector('circle').style.strokeDashoffset = 283 - daysProgress;
+      document.querySelector('#hours').parentElement.querySelector('circle').style.strokeDashoffset = 283 - hoursProgress;
+      document.querySelector('#minutes').parentElement.querySelector('circle').style.strokeDashoffset = 283 - minutesProgress;
+      document.querySelector('#seconds').parentElement.querySelector('circle').style.strokeDashoffset = 283 - secondsProgress;
     }
   
     // Update the countdown every second
@@ -144,5 +168,7 @@
   
     // Initial call to display countdown immediately
     updateCountdown();
+  
+    // Note: Since Google Forms handles form submissions, additional JavaScript for form handling is not required.
   
   })();

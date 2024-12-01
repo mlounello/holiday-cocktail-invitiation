@@ -11,7 +11,10 @@
   <meta name="description" content="Join us for a festive Holiday Cocktail Party! Enjoy delightful cocktails, great company, and holiday cheer at our celebration. RSVP now!">
   
   <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pIH+VCOt6YoULJIo7+MQLczQIrPNzj0V5UV/dK1u+Zl4P1M6z1xCAXxkkjPp58MRHRxEjkNs+FffJJcU3G8ZBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   
   <!-- Animate.css for Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -24,87 +27,99 @@
   <!-- Snowfall Canvas -->
   <canvas id="snowfall-canvas" aria-hidden="true"></canvas>
   
-  <!-- Background Music Removed -->
-  
   <!-- Main Content -->
   <main class="container" id="main-content">
     
     <!-- Header Section -->
     <header class="animate__animated animate__fadeInDown">
-      <h1>Holiday Cocktail Party</h1>
+      <h1>Holiday Cocktail Party <i class="fas fa-snowflake"></i></h1>
       <p>Join us for an evening of festive cheer!</p>
     </header>
     
     <!-- Event Details Section -->
     <section id="details" class="animate__animated animate__fadeInUp" aria-labelledby="details-heading">
-      <h2 id="details-heading">Event Details</h2>
-      <p>Date: December 21, 2024</p>
-      <p>Time: 6:00 PM - 11:00 PM</p>
-      <p>Location: 15 Breeman Street, Colonie, NY 12205</p>
+      <h2 id="details-heading"><i class="fas fa-calendar-alt"></i> Event Details</h2>
+      <p><i class="fas fa-calendar-day"></i> <strong>Date:</strong> December 21, 2024</p>
+      <p><i class="fas fa-clock"></i> <strong>Time:</strong> 6:00 PM - 11:00 PM</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> 15 Breeman Street, Colonie, NY 12205</p>
     </section>
     
     <!-- About the Hosts and Dogs Section -->
     <section id="about-dogs" class="animate__animated animate__fadeInUp" aria-labelledby="about-dogs-heading">
-      <h2 id="about-dogs-heading">About Us and Our Furry Friends</h2>
+      <h2 id="about-dogs-heading"><i class="fas fa-paw"></i> Meet Our Hosts</h2>
       <div class="dogs">
-        <img src="assets/images/dogs-together.jpg" alt="Phinnaeus the Golden Retriever and Louis the Cardigan Corgi enjoying the holiday season together">
-        <p>Meet Phinnaeus and Louis, our beloved companions who love spreading holiday joy!</p>
+        <!-- Host 1: Phinnaeus -->
+        <div class="dog-host">
+          <img src="assets/images/phinnaeus.jpg" alt="Phinnaeus the Golden Retriever, the cheerful host of our holiday party">
+          <h3>Phinnaeus</h3>
+          <p>Phinnaeus, our spirited Golden Retriever, loves to greet guests with his wagging tail and warm hugs. His playful nature ensures a lively atmosphere throughout the evening.</p>
+        </div>
+        
+        <!-- Host 2: Louis -->
+        <div class="dog-host">
+          <img src="assets/images/louis.jpg" alt="Louis the Cardigan Corgi, the wise and charming host of our holiday gathering">
+          <h3>Louis</h3>
+          <p>Louis, our charming Cardigan Corgi, brings a touch of elegance and wisdom to the party. His calm demeanor balances Phinnaeus's energy, creating a perfect harmony.</p>
+        </div>
       </div>
     </section>
     
     <!-- RSVP Section -->
     <section id="rsvp" class="animate__animated animate__fadeInUp" aria-labelledby="rsvp-heading">
-      <h2 id="rsvp-heading">RSVP</h2>
-      <form id="rsvp-form" action="https://formspree.io/f/mayvkwpz" method="POST" aria-label="RSVP Form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
-        
-        <label for="guests">Number of Attendees:</label>
-        <select id="guests" name="guests" required aria-required="true">
-          <option value="">Select</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        
-        <!-- Guest Names (Initially Hidden) -->
-        <div id="guest-names" style="display: none;">
-          <label for="guest1">Guest 1 Name:</label>
-          <input type="text" id="guest1" name="guest1" placeholder="Guest 1 Name">
-          
-          <label for="guest2">Guest 2 Name:</label>
-          <input type="text" id="guest2" name="guest2" placeholder="Guest 2 Name">
-          
-          <label for="guest3">Guest 3 Name:</label>
-          <input type="text" id="guest3" name="guest3" placeholder="Guest 3 Name">
-        </div>
-        
-        <button type="submit">Submit</button>
-      </form>
+      <h2 id="rsvp-heading"><i class="fas fa-envelope"></i> RSVP</h2>
+      <!-- Google Forms Embed -->
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSea86EwD80j-IL7BlRH6oPoSllzRH4Rtb10lyJWVklOdC8PEQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <p class="form-instructions">After submitting, please bookmark the confirmation page to edit your RSVP if needed.</p>
+      </div>
     </section>
     
     <!-- Countdown Timer Section -->
     <section id="timer" class="animate__animated animate__fadeInUp" aria-labelledby="timer-heading">
-      <h2 id="timer-heading">Time Until the Party</h2>
+      <h2 id="timer-heading"><i class="fas fa-hourglass-start"></i> Time Until the Party</h2>
       <div class="countdown">
-        <span id="days">00</span> Days
-        <span id="hours">00</span> Hours
-        <span id="minutes">00</span> Minutes
-        <span id="seconds">00</span> Seconds
+        <div class="count-item">
+          <svg class="progress-circle" width="100" height="100">
+            <circle cx="50" cy="50" r="45" stroke="#ae9142" stroke-width="5" fill="none" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+          </svg>
+          <span id="days">00</span> Days
+        </div>
+        <div class="count-item">
+          <svg class="progress-circle" width="100" height="100">
+            <circle cx="50" cy="50" r="45" stroke="#ae9142" stroke-width="5" fill="none" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+          </svg>
+          <span id="hours">00</span> Hours
+        </div>
+        <div class="count-item">
+          <svg class="progress-circle" width="100" height="100">
+            <circle cx="50" cy="50" r="45" stroke="#ae9142" stroke-width="5" fill="none" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+          </svg>
+          <span id="minutes">00</span> Minutes
+        </div>
+        <div class="count-item">
+          <svg class="progress-circle" width="100" height="100">
+            <circle cx="50" cy="50" r="45" stroke="#ae9142" stroke-width="5" fill="none" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+          </svg>
+          <span id="seconds">00</span> Seconds
+        </div>
       </div>
     </section>
     
-    <!-- Removed Footer Section -->
-    
-    <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <span class="close-button" role="button" tabindex="0">&times;</span>
-        <h2>Thank You!</h2>
-        <p>Your RSVP has been received. We look forward to celebrating with you!</p>
+    <!-- Location Section -->
+    <section id="location" class="animate__animated animate__fadeInUp" aria-labelledby="location-heading">
+      <h2 id="location-heading"><i class="fas fa-map-marked-alt"></i> Location & Directions</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.123456789!2d-73.93000008459402!3d42.65179497916109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e71a3c5b5f8c3d%3A0xa3b0b2c1d1e2f3a!2s15%20Breeman%20St%2C%20Colonie%2C%20NY%2012205!5e0!3m2!1sen!2sus!4v1699134512345!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" aria-label="Event Location Map"></iframe>
       </div>
-    </div>
+      <div class="calendar-add">
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Holiday+Cocktail+Party&dates=20241221T180000Z/20241221T230000Z&details=Join+us+for+a+festive+holiday+cocktail+party!&location=15+Breeman+Street,+Colonie,+NY+12205" target="_blank" rel="noopener noreferrer">
+          <button class="add-to-calendar"><i class="fas fa-calendar-plus"></i> Add to Calendar</button>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <!-- Removed as per previous steps -->
     
   </main>
   

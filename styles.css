@@ -7,6 +7,9 @@
     box-sizing: border-box;
   }
   
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+  
   /* Define Color Variables */
   :root {
     /* Primary and Secondary Colors */
@@ -27,12 +30,15 @@
     --tertiary-color-11: #b3dac5; /* Light Green */
     
     /* Other Variables */
-    --background-color: rgba(12, 35, 64, 0.9); /* Semi-transparent Primary Color */
+    --background-color: rgba(12, 35, 64, 0.7); /* Semi-transparent Primary Color with lower opacity */
     --text-color: #edf2f9; /* Very Light Blue for Text */
     --highlight-color: #ae9142; /* Secondary Color for Highlights */
     
     /* Focus Outline Color */
     --focus-outline-color: #d39f10; /* Mustard Gold for focus outlines */
+    
+    /* Form Instructions Color */
+    --instruction-color: #c1cddd; /* Soft Blue */
   }
   
   /* Body Styling */
@@ -60,12 +66,12 @@
   
   /* Container Styling */
   .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
-    background: var(--background-color); /* Semi-transparent primary color */
+    padding: 40px 20px;
+    background: var(--background-color); /* Semi-transparent primary color with lower opacity */
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
     margin-top: 50px;
     position: relative;
     z-index: 1; /* Ensure content is above the canvas */
@@ -74,11 +80,11 @@
   /* Header Styling */
   header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   
   header h1 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Playfair Display', serif;
     font-size: 3em;
     color: var(--highlight-color);
     margin-bottom: 10px;
@@ -91,17 +97,24 @@
   
   /* Section Styling */
   section {
-    margin-bottom: 30px;
-    padding: 15px;
-    border-left: 4px solid var(--highlight-color);
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 5px solid var(--highlight-color);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
   }
   
   section h2 {
-    margin-bottom: 15px;
-    color: var(--secondary-color); /* Updated as per user change */
+    margin-bottom: 20px;
+    color: var(--secondary-color);
     font-size: 2em;
+  }
+  
+  section p {
+    font-size: 1.1em;
+    color: var(--tertiary-color-5);
+    margin-bottom: 10px;
+    line-height: 1.6;
   }
   
   /* About Dogs Section */
@@ -109,144 +122,154 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
   }
   
-  #about-dogs .dogs img {
-    max-width: 100%;
-    width: 300px; /* Adjusted width */
+  .dog-host {
+    text-align: center;
+    max-width: 450px;
+  }
+  
+  .dog-host img {
+    width: 100%;
+    max-width: 350px;
     height: auto;
-    object-fit: cover;
     border-radius: 15px;
-    border: 3px solid var(--highlight-color);
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 4px solid var(--highlight-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  #about-dogs .dogs img:hover {
+  .dog-host img:hover {
     transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   }
   
-  #about-dogs .dogs p {
-    font-size: 1.1em;
+  .dog-host h3 {
+    margin-top: 15px;
+    font-size: 1.8em;
+    color: var(--highlight-color);
+  }
+  
+  .dog-host p {
+    font-size: 1em;
     color: var(--tertiary-color-5);
     margin-top: 10px;
+    line-height: 1.6;
   }
   
-  /* RSVP Form Styling */
-  #rsvp-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  /* RSVP Section Styling */
+  #rsvp .form-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   }
   
-  #rsvp-form label {
-    font-size: 1em;
-    color: var(--tertiary-color-5);
-  }
-  
-  #rsvp-form input, #rsvp-form select {
-    padding: 10px;
-    border: 2px solid var(--tertiary-color-2);
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: var(--tertiary-color-7);
-    color: var(--primary-color);
-  }
-  
-  #rsvp-form input::placeholder, #rsvp-form select::placeholder {
-    color: var(--tertiary-color-6);
-  }
-  
-  #guest-names label {
-    font-size: 1em;
-    color: var(--tertiary-color-5);
-  }
-  
-  #guest-names input {
-    padding: 10px;
-    border: 2px solid var(--tertiary-color-2);
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: var(--tertiary-color-7);
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-  
-  #guest-names input::placeholder {
-    color: var(--tertiary-color-6);
-  }
-  
-  #rsvp-form button {
-    padding: 15px;
+  #rsvp iframe {
     border: none;
-    border-radius: 5px;
-    background-color: var(--highlight-color);
-    color: #fff;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 10px;
+    width: 100%;
+    height: 800px;
   }
   
-  #rsvp-form button:hover,
-  #rsvp-form button:focus {
-    background-color: var(--tertiary-color-4);
-    transform: scale(1.05);
-    outline: none;
+  .form-instructions {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--instruction-color);
+    font-size: 1em;
   }
   
   /* Countdown Timer Styling */
   #timer {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    font-size: 1.2em; /* Reduced font size from 1.5em to 1.2em */
+    gap: 30px;
+    font-size: 2em;
+    align-items: center;
   }
   
-  #timer span {
-    background: rgba(12, 35, 64, 0.7); /* Primary color with transparency */
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: var(--tertiary-color-5);
+  .countdown {
+    display: flex;
+    gap: 30px;
   }
   
-  /* Modal Styling */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+  .count-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .modal-content {
-    background-color: var(--background-color);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid var(--highlight-color);
-    width: 80%;
-    max-width: 400px;
+  .progress-circle {
+    transform: rotate(-90deg);
+    margin-bottom: 10px;
+  }
+  
+  .progress-circle circle {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear;
+  }
+  
+  /* Location Section Styling */
+  #location .map-container {
+    margin-top: 20px;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
+  .calendar-add {
+    margin-top: 20px;
     text-align: center;
   }
   
-  .close-button {
-    color: var(--tertiary-color-5);
-    float: right;
-    font-size: 1.5em;
-    font-weight: bold;
+  .add-to-calendar {
+    background-color: var(--highlight-color);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   
-  .close-button:hover,
-  .close-button:focus {
-    color: var(--tertiary-color-2);
-    text-decoration: none;
-    cursor: pointer;
+  .add-to-calendar:hover,
+  .add-to-calendar:focus {
+    background-color: var(--tertiary-color-4);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    outline: none;
+  }
+  
+  .add-to-calendar i {
+    font-size: 1.2em;
+  }
+  
+  /* Hover Animations for Images */
+  .dog-host img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dog-host img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Hover Animations for Buttons */
+  .add-to-calendar {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-to-calendar:hover,
+  .add-to-calendar:focus {
+    background-color: var(--tertiary-color-4);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    outline: none;
   }
   
   /* Responsive Design */
@@ -257,19 +280,51 @@
       font-size: 2em;
     }
   
-    #rsvp-form input, #rsvp-form select, #rsvp-form button {
+    header p {
       font-size: 1em;
-      padding: 10px;
     }
   
-    #about-dogs .dogs img {
-      width: 80%;
+    .dog-host h3 {
+      font-size: 1.5em;
     }
   
-    /* Increase focus outline for better visibility */
-    a:focus, button:focus, input:focus, select:focus {
-      outline: 2px dashed var(--focus-outline-color);
-      outline-offset: 2px;
+    .dog-host p {
+      font-size: 0.9em;
+    }
+  
+    #rsvp iframe {
+      height: 900px; /* Increased height for mobile */
+    }
+  
+    #timer {
+      font-size: 1.5em;
+    }
+  
+    .countdown {
+      gap: 20px;
+    }
+  
+    .count-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .progress-circle {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .progress-circle circle {
+      r: 35;
+      cx: 40;
+      cy: 40;
+      stroke-dasharray: 220;
+      stroke-dashoffset: 0;
+    }
+  
+    /* Adjust Map iframe height */
+    #location iframe {
+      height: 300px;
     }
   }
   
@@ -277,7 +332,7 @@
   @media (min-width: 601px) and (max-width: 992px) {
     .container {
       max-width: 90%;
-      padding: 30px;
+      padding: 40px 30px;
     }
   
     header h1 {
@@ -286,23 +341,53 @@
   
     #about-dogs .dogs {
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
     }
   
-    #about-dogs .dogs img {
-      width: 45%; /* Two images side by side */
+    .dog-host {
+      margin: 0 20px;
+    }
+  
+    .dog-host img {
+      max-width: 400px;
+    }
+  
+    #rsvp iframe {
+      height: 850px;
     }
   
     #timer {
-      font-size: 1.3em;
+      font-size: 1.8em;
+    }
+  
+    .countdown {
+      gap: 25px;
+    }
+  
+    .progress-circle {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .progress-circle circle {
+      r: 40;
+      cx: 45;
+      cy: 45;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 0;
+    }
+  
+    /* Adjust Map iframe height */
+    #location iframe {
+      height: 400px;
     }
   }
   
   /* Desktops and Larger Screens */
   @media (min-width: 993px) {
     .container {
-      max-width: 800px;
-      padding: 40px;
+      max-width: 1000px;
+      padding: 50px 40px;
     }
   
     header h1 {
@@ -314,11 +399,41 @@
       justify-content: space-between;
     }
   
-    #about-dogs .dogs img {
-      width: 45%;
+    .dog-host {
+      margin: 0 30px;
+    }
+  
+    .dog-host img {
+      max-width: 400px;
+    }
+  
+    #rsvp iframe {
+      height: 800px;
     }
   
     #timer {
-      font-size: 1.5em;
+      font-size: 2em;
+    }
+  
+    .countdown {
+      gap: 30px;
+    }
+  
+    .progress-circle {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .progress-circle circle {
+      r: 45;
+      cx: 50;
+      cy: 50;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 0;
+    }
+  
+    /* Adjust Map iframe height */
+    #location iframe {
+      height: 450px;
     }
   }
