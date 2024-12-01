@@ -183,11 +183,16 @@
   /* Countdown Timer Styling */
   #timer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 30px;
     font-size: 2em;
     align-items: center;
   }
+  #timer-heading {
+    font-size: 2em; /* Slightly smaller than default */
+    font-weight: bold;
+    color: var(--secondary-color);
+}
   
   .countdown {
     display: flex;
@@ -408,7 +413,7 @@
     }
   
     #timer {
-      font-size: 2em;
+      font-size: 1em;
     }
   
     .countdown {
