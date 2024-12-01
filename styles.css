@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* Reset some default styles */
 * {
     margin: 0;
@@ -5,13 +7,39 @@
     box-sizing: border-box;
   }
   
+  /* Define Color Variables */
+  :root {
+    /* Primary and Secondary Colors */
+    --primary-color: #0c2340; /* Dark Blue */
+    --secondary-color: #ae9142; /* Gold/Bronze */
+    
+    /* Tertiary Colors */
+    --tertiary-color-1: #143865; /* Slightly Lighter Dark Blue */
+    --tertiary-color-2: #1c4f8f; /* Medium Blue */
+    --tertiary-color-3: #8c7535; /* Olive/Brown */
+    --tertiary-color-4: #d39f10; /* Mustard Gold */
+    --tertiary-color-5: #e1e8f2; /* Light Blue */
+    --tertiary-color-6: #c1cddd; /* Soft Blue */
+    --tertiary-color-7: #edf2f9; /* Very Light Blue */
+    --tertiary-color-8: #f8f4ec; /* Cream */
+    --tertiary-color-9: #efe9d9; /* Beige */
+    --tertiary-color-10: #0a843d; /* Green */
+    --tertiary-color-11: #b3dac5; /* Light Green */
+    
+    /* Other Variables */
+    --background-color: rgba(12, 35, 64, 0.9); /* Semi-transparent Primary Color */
+    --text-color: #edf2f9; /* Very Light Blue for Text */
+    --highlight-color: #ae9142; /* Secondary Color for Highlights */
+  }
+  
+  /* Body Styling */
   body {
     font-family: 'Roboto', sans-serif;
     background-image: url('assets/images/background.jpg'); /* Ensure this path is correct */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: #e0e0e0;
+    color: var(--text-color);
     overflow-x: hidden;
     position: relative;
   }
@@ -27,11 +55,12 @@
     z-index: 0; /* Ensure it stays behind other elements */
   }
   
+  /* Container Styling */
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background: var(--background-color); /* Semi-transparent primary color */
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     margin-top: 50px;
@@ -39,6 +68,7 @@
     z-index: 1; /* Ensure content is above the canvas */
   }
   
+  /* Header Styling */
   header {
     text-align: center;
     margin-bottom: 30px;
@@ -47,29 +77,31 @@
   header h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3em;
-    color: #00bcd4;
+    color: var(--highlight-color);
     margin-bottom: 10px;
   }
   
   header p {
     font-size: 1.2em;
-    color: #b2ebf2;
+    color: var(--tertiary-color-5);
   }
   
+  /* Section Styling */
   section {
     margin-bottom: 30px;
     padding: 15px;
-    border-left: 4px solid #00bcd4;
+    border-left: 4px solid var(--highlight-color);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
   }
   
   section h2 {
     margin-bottom: 15px;
-    color: #00e5ff;
+    color: var(--tertiary-color-2);
     font-size: 2em;
   }
   
+  /* About Dogs Section */
   #about-dogs .dogs {
     display: flex;
     flex-direction: column;
@@ -83,7 +115,7 @@
     height: auto;
     object-fit: cover;
     border-radius: 15px;
-    border: 3px solid #00bcd4;
+    border: 3px solid var(--highlight-color);
     transition: transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
@@ -94,10 +126,11 @@
   
   #about-dogs .dogs p {
     font-size: 1.1em;
-    color: #b2ebf2;
+    color: var(--tertiary-color-5);
     margin-top: 10px;
   }
   
+  /* RSVP Form Styling */
   #rsvp-form {
     display: flex;
     flex-direction: column;
@@ -106,31 +139,39 @@
   
   #rsvp-form label {
     font-size: 1em;
-    color: #b2ebf2;
+    color: var(--tertiary-color-5);
   }
   
   #rsvp-form input {
     padding: 10px;
-    border: none;
+    border: 2px solid var(--tertiary-color-2);
     border-radius: 5px;
     font-size: 1em;
+    background-color: var(--tertiary-color-7);
+    color: var(--primary-color);
+  }
+  
+  #rsvp-form input::placeholder {
+    color: var(--tertiary-color-6);
   }
   
   #rsvp-form button {
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: #00bcd4;
+    background-color: var(--highlight-color);
     color: #fff;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
   }
   
   #rsvp-form button:hover {
-    background-color: #0097a7;
+    background-color: var(--tertiary-color-4);
+    transform: scale(1.05);
   }
   
+  /* Countdown Timer Styling */
   #timer {
     display: flex;
     justify-content: center;
@@ -139,36 +180,94 @@
   }
   
   #timer span {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(12, 35, 64, 0.7); /* Primary color with transparency */
     padding: 10px 20px;
     border-radius: 5px;
-    color: #00e5ff;
+    color: var(--tertiary-color-5);
   }
   
+  /* Footer Styling */
   footer {
     text-align: center;
-    color: #b2ebf2;
+    color: var(--tertiary-color-5);
   }
   
   .social a {
-    color: #00bcd4;
+    color: var(--highlight-color);
     margin: 0 10px;
     font-size: 1.5em;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
   }
   
   .social a:hover {
-    color: #00e5ff;
+    color: var(--tertiary-color-2);
+    transform: scale(1.2);
   }
   
   /* Responsive Design */
+  
+  /* Mobile Devices (Portrait and Landscape) */
   @media (max-width: 600px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    #rsvp-form input, #rsvp-form button {
+      font-size: 1em;
+      padding: 10px;
+    }
+  
     #about-dogs .dogs img {
-      width: 80%; /* Adjusts image width on smaller screens */
+      width: 80%;
+    }
+  }
+  
+  /* Tablets (Portrait and Landscape) */
+  @media (min-width: 601px) and (max-width: 992px) {
+    .container {
+      max-width: 90%;
+      padding: 30px;
+    }
+  
+    header h1 {
+      font-size: 2.5em;
+    }
+  
+    #about-dogs .dogs {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    #about-dogs .dogs img {
+      width: 45%; /* Two images side by side */
     }
   
     #timer {
-      flex-direction: column;
-      gap: 5px;
+      font-size: 1.3em;
+    }
+  }
+  
+  /* Desktops and Larger Screens */
+  @media (min-width: 993px) {
+    .container {
+      max-width: 800px;
+      padding: 40px;
+    }
+  
+    header h1 {
+      font-size: 3em;
+    }
+  
+    #about-dogs .dogs {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    #about-dogs .dogs img {
+      width: 45%;
+    }
+  
+    #timer {
+      font-size: 1.5em;
     }
   }
