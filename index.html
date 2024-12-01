@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Cocktail Party Invitation</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-yHmojHP91roN6xw4mwPiy8L1ZSMVgmV1mZCcSfh5D+/dx7/ZfYV1Y0wkhOjxOEEQxcEYvMw+9MwQZb1t6E8Hcw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Animate.css for Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="animate__animated animate__fadeInDown">
+      <h1>You're Invited!</h1>
+      <p>Join us for a Festive Holiday Cocktail Party</p>
+    </header>
+    
+    <section id="details" class="animate__animated animate__fadeInUp">
+      <h2>Event Details</h2>
+      <p><strong>Date:</strong> Saturday, December 21, 2024</p>
+      <p><strong>Time:</strong> 6:00 PM</p>
+      <p><strong>Location:</strong> 15 Breeman Street, Colonie, NY 12205</p>
+    </section>
+    
+    <!-- Single Dog Image Section -->
+    <section id="about-dogs" class="animate__animated animate__fadeInUp">
+      <h2>Meet Phinnaeus and Louis</h2>
+      <div class="dogs">
+        <img src="assets/images/dogs-together.jpg" alt="Phinnaeus the Golden Retriever and Louis the Cardigan Corgi">
+        <p>Phinnaeus 🐾 & Louis 🐾</p>
+      </div>
+    </section>
+    
+    <section id="rsvp" class="animate__animated animate__fadeInUp">
+      <h2>RSVP</h2>
+      <form id="rsvp-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    
+    <section id="countdown" class="animate__animated animate__fadeInUp">
+      <h2>Countdown to the Party!</h2>
+      <div id="timer">
+        <span id="days">0</span> Days 
+        <span id="hours">0</span> Hours 
+        <span id="minutes">0</span> Minutes 
+        <span id="seconds">0</span> Seconds
+      </div>
+    </section>
+    
+    <footer class="animate__animated animate__fadeInUp">
+      <p>We look forward to celebrating with you!</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- jQuery (Required for Snowfall.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YeXLhC1+6QO13uv5wCAX07u5uDweQyNyoq3gK+7t5huJJ1f1sc1+8/3q4a5fN/4RX6fIvJbvo7XKlvT8/Uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- Snowfall.js for Snow Effect -->
+  <script src="https://cdn.jsdelivr.net/gh/loktar00/JQuery-Snowfall@master/snowfall.jquery.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

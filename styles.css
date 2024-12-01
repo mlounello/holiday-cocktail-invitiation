@@ -1,0 +1,178 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e; /* Fallback color */
+    color: #e0e0e0;
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.7); /* Semi-transparent overlay */
+    z-index: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: #00bcd4;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #b2ebf2;
+  }
+  
+  section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-left: 4px solid #00bcd4;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  section h2 {
+    margin-bottom: 15px;
+    color: #00e5ff;
+    font-size: 2em;
+  }
+  
+  #about-dogs .dogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  #about-dogs .dogs img {
+    max-width: 100%;
+    width: 300px; /* Adjusted width */
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #00bcd4;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  #about-dogs .dogs img:hover {
+    transform: scale(1.05);
+  }
+  
+  #about-dogs .dogs p {
+    font-size: 1.1em;
+    color: #b2ebf2;
+    margin-top: 10px;
+  }
+  
+  #rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #rsvp-form label {
+    font-size: 1em;
+    color: #b2ebf2;
+  }
+  
+  #rsvp-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  #rsvp-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #rsvp-form button:hover {
+    background-color: #0097a7;
+  }
+  
+  #timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5em;
+  }
+  
+  #timer span {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #00e5ff;
+  }
+  
+  footer {
+    text-align: center;
+    color: #b2ebf2;
+  }
+  
+  .social a {
+    color: #00bcd4;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+  }
+  
+  .social a:hover {
+    color: #00e5ff;
+  }
+  
+  /* Animations (handled via Animate.css classes in HTML) */
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    #about-dogs .dogs img {
+      width: 80%; /* Adjusts image width on smaller screens */
+    }
+  
+    #timer {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
