@@ -439,3 +439,51 @@
       height: 450px;
     }
   }
+  /* Special Guest Section */
+#special-guest {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 5px solid var(--highlight-color);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  #special-guest h2 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    font-size: 2em;
+  }
+  
+  #special-guest .guest {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #special-guest .guest img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 15px;
+    border: 4px solid var(--highlight-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #special-guest .guest img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  #special-guest .guest h3 {
+    margin-top: 15px;
+    font-size: 1.8em;
+    color: var(--highlight-color);
+  }
+  
+  #special-guest .guest p {
+    font-size: 1em;
+    color: var(--tertiary-color-5);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
