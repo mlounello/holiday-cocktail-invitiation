@@ -176,12 +176,12 @@
     outline: none;
   }
   
-  /* Countdown Timer Styling */
-  #timer {
+   /* Countdown Timer Styling */
+   #timer {
     display: flex;
     justify-content: center;
     gap: 15px;
-    font-size: 1.2em; /* Reduced font size from 1.5em to 1.2em */
+    font-size: 1.5em;
   }
   
   #timer span {
