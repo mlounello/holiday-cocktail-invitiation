@@ -1,116 +1,116 @@
-// RSVP Form Handling
-// Remove or comment out the RSVP form alert
-/*document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    
-    if(name && email){
-      // For simplicity, we'll just show an alert. 
-      // For real-world usage, integrate with a service like Formspree.
-      alert(`Thank you for your RSVP, ${name}! We look forward to celebrating with you.`);
-      
-      // Reset the form
-      e.target.reset();
-    } else {
-      alert('Please fill in all fields.');
-    }
-  });
-  */
-  
-  // Countdown Timer
-  const eventDate = new Date('2024-12-21T18:00:00').getTime();
-  
-  const countdownFunction = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-    
-    if (distance < 0) {
-      clearInterval(countdownFunction);
-      document.getElementById('timer').innerText = "The party has started!";
-      return;
-    }
-    
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    document.getElementById('days').innerText = days;
-    document.getElementById('hours').innerText = hours;
-    document.getElementById('minutes').innerText = minutes;
-    document.getElementById('seconds').innerText = seconds;
-  }, 1000);
-  
-  // Pure JavaScript Snowfall Effect
-  (function() {
+// script.js
+
+// Self-Executing Anonymous Function to Avoid Global Scope Pollution
+(function() {
+    // Select the Snowfall Canvas
     const canvas = document.getElementById('snowfall-canvas');
     const ctx = canvas.getContext('2d');
-    
-    // Set canvas size
+  
+    // Set Canvas Size to Full Window Size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
-    // Handle window resize
+  
+    // Update Canvas Size on Window Resize
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      initializeSnowflakes(); // Reinitialize snowflakes on resize
     });
-    
-    // Snowflake class
+  
+    // Mouse Position Tracking for Interactivity
+    let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  
+    window.addEventListener('mousemove', function(e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+  
+    // Snowflake Class Definition
     class Snowflake {
       constructor() {
         this.reset();
       }
-      
+  
+      // Initialize or Reset Snowflake Properties
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height - canvas.height;
-        this.radius = Math.random() * 4 + 1;
-        this.speed = Math.random() * 3 + 1;
-        this.wind = Math.random() * 2 - 1;
+        this.radius = Math.random() * 4 + 1; // Snowflake size: 1px to 5px
+        this.speed = Math.random() * 2 + 0.5; // Falling speed: 0.5 to 2.5
+        this.wind = Math.random() * 1 - 0.5; // Horizontal movement: -0.5 to +0.5
+        this.color = '#ffffff'; // Snowflake color: white
+        this.interactiveRadius = 100; // Radius for cursor interaction
       }
-      
+  
+      // Update Snowflake Position and Interaction
       update() {
+        // Move Snowflake Downward and Horizontally
         this.y += this.speed;
         this.x += this.wind;
-        
-        if (this.y > canvas.height) {
+  
+        // Calculate Distance from Mouse Cursor
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+  
+        // If Within Interactive Radius, Move Snowflake Towards Cursor
+        if (distance < this.interactiveRadius) {
+          // Adjust movement strength as needed (0.5 can be modified)
+          this.x += (dx / distance) * 0.5;
+          this.y += (dy / distance) * 0.5;
+        }
+  
+        // Reset Snowflake if It Moves Beyond the Bottom or Sides
+        if (this.y > canvas.height || this.x < 0 || this.x > canvas.width) {
           this.reset();
         }
-        
-        if (this.x < 0 || this.x > canvas.width) {
-          this.x = (this.x + canvas.width) % canvas.width;
-        }
       }
-      
+  
+      // Draw Snowflake on Canvas
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#00bcd4';
+        ctx.fillStyle = this.color;
         ctx.fill();
       }
     }
-    
-    // Create snowflakes
-    const snowflakes = [];
-    const numberOfSnowflakes = 100;
-    for (let i = 0; i < numberOfSnowflakes; i++) {
-      snowflakes.push(new Snowflake());
+  
+    // Array to Hold Snowflake Instances
+    let snowflakes = [];
+    let numberOfSnowflakes;
+  
+    // Initialize Snowflakes Based on Screen Width
+    function initializeSnowflakes() {
+      snowflakes = []; // Clear Existing Snowflakes
+  
+      if (window.innerWidth < 600) {
+        numberOfSnowflakes = 100; // Fewer snowflakes on small screens
+      } else {
+        numberOfSnowflakes = 200; // More snowflakes on larger screens
+      }
+  
+      for (let i = 0; i < numberOfSnowflakes; i++) {
+        snowflakes.push(new Snowflake());
+      }
     }
-    
-    // Animation loop
+  
+    // Initial Snowflake Setup
+    initializeSnowflakes();
+  
+    // Animation Loop for Snowfall Effect
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+  
+      // Update and Draw Each Snowflake
       snowflakes.forEach(flake => {
         flake.update();
         flake.draw();
       });
-      
-      requestAnimationFrame(animate);
+  
+      requestAnimationFrame(animate); // Continue Animation
     }
-    
+  
+    // Start the Animation
     animate();
+  
   })();
